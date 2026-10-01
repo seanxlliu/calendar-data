@@ -1,0 +1,33 @@
+# 放在私有仓库 calendar-data 里：.github/workflows/sync.yml
+# 每 30 分钟把 iCloud / Outlook 的公开日历同步成 icloud.json / outlook.json
+name: sync
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: 取同步脚本（来自公开仓库 calendar）
+        run: curl -fsSL "https://raw.githubusercontent.com/${{ github.repository_owner }}/calendar/main/sync.py" -o "$RUNNER_TEMP/sync.py"
+      - name: 安装依赖
+        run: pip install --quiet icalendar recurring-ical-events
+      - name: 同步
+        run: python3 "$RUNNER_TEMP/sync.py"
+      - name: 保存结果
+        run: |
+          git add -A .
+          if git diff --cached --quiet; then echo "没有变化"; exit 0; fi
+          git config user.name "calendar-sync"
+          git config user.email "calendar-sync@users.noreply.github.com"
+          git commit -q -m "sync calendars"
+          git pull -q --rebase
+          git push -q
