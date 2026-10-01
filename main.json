@@ -1,0 +1,22 @@
+{
+ "events": {
+  "emupvh1mlfyuj": {
+   "title": "NATHAN游泳课",
+   "date": "2026-10-01",
+   "allDay": false,
+   "start": "17:30",
+   "end": "18:15",
+   "repeat": "weekly",
+   "days": [
+    1,
+    3
+   ],
+   "until": "",
+   "color": 1,
+   "note": "",
+   "exdates": [],
+   "updatedAt": "2026-10-01T18:33:17.321Z"
+  }
+ },
+ "settings": {}
+}
