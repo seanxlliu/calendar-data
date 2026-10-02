@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """把 iCloud / Outlook 的公开日历同步成冰箱日历能读的 JSON。
 
-放在私有仓库 calendar-data 的根目录，由同仓库的 .github/workflows/sync.yml 定时运行。
+放在 calendar-data 仓库 的根目录，由同仓库的 .github/workflows/sync.yml 定时运行。
 读取 main.json 里的 settings.icsUrl / settings.outlookUrl，
 写出 icloud.json / outlook.json：{"updatedAt": ISO, "items": [{d,t,s,e,ad,l}]}。
 展开范围：过去 30 天到未来 180 天；时间统一换算成温哥华时间；重复日程会被展开成一条条。
