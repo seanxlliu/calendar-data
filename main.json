@@ -18,7 +18,12 @@
    "updatedAt": "2026-10-01T18:33:17.321Z"
   }
  },
- "settings": {},
+ "settings": {
+  "icsUrl": "",
+  "outlookUrl": "https://outlook.live.com/owa/calendar/ec46b7fa-6ae9-4baa-a943-7d10a7ecaf73/7634d90f-6262-4c56-8790-6eff15157440/cid-6C12E8B942547A49/calendar.ics",
+  "weekStart": 1,
+  "photoMin": 1
+ },
  "photos": [
   {
    "id": "pmuqq2hojdf12",
