@@ -18,5 +18,12 @@
    "updatedAt": "2026-10-01T18:33:17.321Z"
   }
  },
- "settings": {}
+ "settings": {},
+ "photos": [
+  {
+   "id": "pmuqq2hojdf12",
+   "path": "photos/pmuqq2hojdf12.jpg",
+   "sha": "ec4442a81f7d48eced31c56a8b1059a8f7bfa010"
+  }
+ ]
 }
