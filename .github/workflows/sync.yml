@@ -1,6 +1,6 @@
 # 放在 calendar-data 仓库 里：.github/workflows/sync.yml
 # 同一个仓库的根目录还要放 sync.py
-# 每 30 分钟把 iCloud / Outlook 的公开日历同步成 icloud.json / outlook.json
+# 每 30 分钟把 Outlook 的公开日历同步成 outlook.json
 name: sync
 on:
   schedule:
